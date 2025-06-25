@@ -39,7 +39,6 @@ form {
   }
 }
 
-
 .form-content {
   width: 905px;
   background-color: #F9FAFB;
@@ -54,7 +53,7 @@ form {
 
   .start {
     position: relative;
-    flex-grow: 1;
+    flex-grow: 10;
 
     .intro-text {
       position: absolute;
@@ -75,7 +74,8 @@ form {
   .mid {
     background-color: white;
     box-shadow: 0 1px 8px gray;
-    height: 296px;
+    /* height: 296px; */
+    flex-grow: 1;
 
     h2 {
       font-size: 1.4rem;
@@ -111,6 +111,26 @@ form {
     }
   }
 
+  .end {
+    flex-grow: 5;
+     button {
+      font-size: 1.1rem;
+      padding: 1em 4em;
+      font-weight: 500;
+      color: white;
+      background-color: #596D48;
+      border-radius: 8px;
+      margin: 25px 0;
+    }
 
+    p {
+      font-weight: 500;
+      
+      a {
+        margin-left: 5px;
+        color: #596D48;
+      }
+    }
+  }
 
 }
