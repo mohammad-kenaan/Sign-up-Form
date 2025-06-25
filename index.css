@@ -38,3 +38,39 @@ form {
     width: 100%;
   }
 }
+
+
+.form-content {
+  width: 905px;
+  background-color: #F9FAFB;
+  display: flex;
+  flex-direction: column;
+
+  .section {
+
+    padding: 1rem 2.5rem;
+
+  }
+
+  .start {
+    position: relative;
+    flex-grow: 1;
+
+    .intro-text {
+      position: absolute;
+      top: 9rem;
+      padding-right: 10rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    p+p {
+      margin: 2.2rem 0;
+    }
+  }
+
+
+}
