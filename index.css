@@ -46,14 +46,13 @@ form {
   flex-direction: column;
 
   .section {
-
     padding: 1rem 2.5rem;
-
   }
 
   .start {
     position: relative;
-    flex-grow: 10;
+    height: 370px;
+    /* flex-grow: 2; */
 
     .intro-text {
       position: absolute;
@@ -67,15 +66,17 @@ form {
     }
 
     p+p {
-      margin: 2.2rem 0;
+      margin: 1rem 0;
     }
   }
 
   .mid {
+    height: 300px;
+    /* flex-grow: 1; */
     background-color: white;
     box-shadow: 0 1px 8px gray;
     /* height: 296px; */
-    flex-grow: 1;
+ 
 
     h2 {
       font-size: 1.4rem;
@@ -90,15 +91,12 @@ form {
         flex-grow: 1;
        }
 
-      .left-side {}
-      .right-side {}
-
       .inp {
-        margin-top: 1.2rem;
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
         label {
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 500;
         }
         input {
@@ -112,7 +110,8 @@ form {
   }
 
   .end {
-    flex-grow: 5;
+    
+    flex-grow: 1; 
      button {
       font-size: 1.1rem;
       padding: 1em 4em;
