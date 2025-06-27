@@ -6,13 +6,17 @@
 form {
   margin: 20px auto;
   display: flex;
-  height: 1024px;
-  width: 1440px;
-  border: 1px solid black;
+  padding: 5px;
+  max-width: 1440px;
+
+
 }
 
 
 .form-image {
+  flex-shrink: 2;
+  min-width: 150px;
+  min-height: 1024px;
   width: 535px;
   background-image: url(./asset/halie-west-25xggax4bSA-unsplash.jpg);
   background-position: center;
@@ -21,12 +25,14 @@ form {
 
   .logo {
     margin-top: 224px;
-    height: 150px;
+    height: 8vw;
+    min-height: 80px;
     background-color: rgb(0, 0, 0, 0.4);
   }
 
   img {
-    height: 160px;
+    height: 100%;
+
     margin: 0 auto;
   }
 
@@ -36,10 +42,13 @@ form {
     text-align: center;
     color: white;
     width: 100%;
+    margin: 0 10px;
+    font-size: 1.1vw;
   }
 }
 
 .form-content {
+  flex-shrink: 1;
   width: 905px;
   background-color: #F9FAFB;
   display: flex;
@@ -50,71 +59,95 @@ form {
   }
 
   .start {
-    position: relative;
-    height: 370px;
-    /* flex-grow: 2; */
+    display: flex;
+    align-items: end;
+    flex-grow: 1;
 
-    .intro-text {
-      position: absolute;
-      top: 9rem;
-      padding-right: 10rem;
-    }
 
     p {
-      font-size: 1.5rem;
+      text-wrap: balance;
+      font-size: 1.6rem;
       font-weight: bold;
     }
 
     p+p {
-      margin: 1rem 0;
+      margin: 2.2rem 0;
     }
   }
 
   .mid {
-    height: 300px;
-    /* flex-grow: 1; */
+    padding-bottom: 2rem;
     background-color: white;
-    box-shadow: 0 1px 8px gray;
-    /* height: 296px; */
- 
+    box-shadow: 0 4px 6px -2px gray;
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 700;
     }
 
     .inp-container {
-      display: flex;
-      gap: 70px;
-      padding-right: 11rem;;
-      div {
-        flex-grow: 1;
-       }
+
+      .first-row,
+      .second-row,
+      .third-row {
+        display: flex;
+        gap: 0 70px;
+        flex-wrap: wrap;
+        max-width: 600px;
+      }
 
       .inp {
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
+
         label {
-          font-size: 0.8rem;
+          font-size: 1.1rem;
           font-weight: 500;
         }
+
         input {
+          appearance: none;
           width: 100%;
           border: 1px #E5E7EB solid;
           border-radius: 5px;
-          font-size: 1.1rem;
+          font-size: 1rem;
+          color: gray;
+          padding: 0.2em;
+          background-color: white;
+          box-shadow: 0 0 0 20px white inset;
+
+          &:invalid {
+            border: 1px red solid;
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: 1px 3px 5px gray;
+            border: 1px solid blue;
+            color: black;
+          }
+
+
+          &::placeholder {
+            font-size: 0.7rem;
+            padding: 0.2em;
+          }
+
         }
+
       }
     }
+
   }
 
   .end {
-    
-    flex-grow: 1; 
-     button {
+    flex-grow: 1.7;
+
+    button {
       font-size: 1.1rem;
-      padding: 1em 4em;
+      padding: 0.6em 3vw;
       font-weight: 500;
       color: white;
       background-color: #596D48;
@@ -124,7 +157,7 @@ form {
 
     p {
       font-weight: 500;
-      
+
       a {
         margin-left: 5px;
         color: #596D48;
@@ -133,3 +166,21 @@ form {
   }
 
 }
+
+.inp:has(input:focus) label {
+  color: gray;
+}
+
+
+.inp label span {
+  font-size: 0.6rem;
+  padding-left: 5px;
+  color: white;
+  transition: color 0.5s ease;
+}
+
+.inp:has(input[type="password"]:focus) label #pass-span {
+  color: red;
+  transition: color 3s ease;
+}
+

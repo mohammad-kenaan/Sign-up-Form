@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./asset/reset.css">
   <link rel="stylesheet" href="./index.css">
+  <script src="./index.js" defer></script>
   <title>Document</title>
 </head>
 
@@ -24,8 +25,9 @@
     <div class="form-content">
       <div class="section start">
         <div class="intro-text">
-          <p>This is not a real online service! You know you need something like this in your life to help you realize
-            your deepest dreams. Sign up <em>now</em> to get started</p>
+          <p>This is not a real online service! You know you need something <br>
+            like this in your life to help you realize
+            your deepest dreams. <br> Sign up <em>now</em> to get started</p>
           <p>You know you want to.</p>
         </div>
 
@@ -33,49 +35,53 @@
       <div class="section mid">
         <h2>Let's do this!</h2>
         <div class="inp-container">
-          <div class="left-side">
+          <div class="first-row">
             <div class="inp">
               <label for="first-name">FIRST NAME</label>
-              <input type="text" name="first-name" id="first-name">
+              <input type="text" name="first-name" id="first-name" autocomplete="name">
             </div>
 
-            <div class="inp">
-              <label for="email">EMAIL</label>
-              <input type="email" name="email" id="email">
-            </div>
-
-            <div class="inp">
-              <label for="password">PASSWORD</label>
-              <input type="password" name="password" id="password"
-               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$">
-            </div>
-
-          </div>
-
-
-          <div class="right-side">
             <div class="inp">
               <label for="last-name">LAST NAME</label>
-              <input type="text" name="last-name" id="last-name">
+              <input type="text" name="last-name" id="last-name" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="second-row">
+            <div class="inp">
+              <label for="email">EMAIL</label>
+              <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                placeholder="example@gmaill.com" autocomplete="email">
             </div>
 
             <div class="inp">
               <label for="tel">PHONE NUMBER</label>
-              <input type="tel" name="tel" id="tel">
+              <input type="tel" name="tel" id="tel" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="third-row">
+            <div class="inp">
+              <label for="password" >PASSWORD
+                <span id="pass-span">(upper-lower,num)</span>
+              </label>
+              <input type="password" name="password" id="password" required
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+                placeholder="Example: (aA123#@!) at least 8 ch">
             </div>
 
             <div class="inp">
-              <label for="confirm-password">CONFIRMPASSWORD</label>
-              <input type="password" name="confirm-password" id="confirm-password">
+              <label for="confirm-password" >CONFIRMPASSWORD
+                <span id="cfPass-span">(Passwords do not match)</span>
+              </label>
+              <input id="confirm-password" type="password" name="confirm-password">
             </div>
-
-
           </div>
         </div>
-
       </div>
+
       <div class="section end">
-        <button type="submit">Create Account</button>
+        <button type="submit" id="btn-submit">Create Account</button>
         <p>Already have an account? <a href=""> Log in</a></p>
       </div>
     </div>
@@ -83,3 +89,5 @@
 </body>
 
 </html>
+
+
