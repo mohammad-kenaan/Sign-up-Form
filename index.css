@@ -96,15 +96,42 @@ form {
         max-width: 600px;
       }
 
+      .inp:has(input:focus) label {
+        color: gray;
+      }
+
+      .inp:has(input[type="password"]:focus) label #pass-span {
+        color: red;
+        transition: color 3s ease;
+      }
+
+
       .inp {
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+        position: relative;
+
+        #cfPass-span {
+          position: absolute;
+          top: 62px;
+          left: 140px;
+        }
 
         label {
           font-size: 1.1rem;
           font-weight: 500;
+
+          span {
+            font-size: 0.6rem;
+            padding-left: 5px;
+            color: white;
+            transition: color 0.5s ease;
+            position: absolute;
+            top: 64px;
+            left: 2px;
+          }
         }
 
         input {
@@ -166,21 +193,3 @@ form {
   }
 
 }
-
-.inp:has(input:focus) label {
-  color: gray;
-}
-
-
-.inp label span {
-  font-size: 0.6rem;
-  padding-left: 5px;
-  color: white;
-  transition: color 0.5s ease;
-}
-
-.inp:has(input[type="password"]:focus) label #pass-span {
-  color: red;
-  transition: color 3s ease;
-}
-
